@@ -1,65 +1,40 @@
-/* Basic reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body styling */
 body {
     font-family: Arial, sans-serif;
 }
 
-/* Container styling */
 .container {
     display: flex;
     flex-wrap: wrap;
-    margin: 20px; /* Space around container */
+    margin: 20px;
 }
 
-/* Section styling */
 .section {
     border: 1px solid black;
     padding: 20px;
     position: relative;
-    flex: 1; /* Allow sections to grow equally */
-    margin: 10px; /* Space between sections */
+    flex: 1;
+    margin: 10px;
 }
 
-/* Section title styling */
 .title {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #ccc; /* Background color for title */
-    padding: 5px;
+    top: 0;
+    right: 0;
+    background-color: #ccc;
+    padding: 5px 10px;
     border: 1px solid black;
 }
 
-/* Media Queries for Responsive Design */
-@media (min-width: 992px) {
-    .section {
-        flex: 1 1 calc(33.33% - 20px); /* 3 equal sections */
-    }
+.section p {
+    margin-top: 30px;
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
-    .section {
-        flex: 1 1 calc(50% - 20px); /* 2 sections in the first row */
-    }
-
-    .section:nth-child(3) {
-        flex-basis: 100%; /* Full width for the third section */
-    }
-}
-
-@media (max-width: 767px) {
-    .section {
-        flex-basis: 100%; /* Full width for all sections */
-    }
-}
-
-/* Background colors for sections */
 .chicken {
     background-color: #f8d7da;
 }
@@ -70,4 +45,25 @@ body {
 
 .sushi {
     background-color: #d1ecf1;
+}
+
+@media (min-width: 992px) {
+    .section {
+        flex: 1 1 calc(33.33% - 20px);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .section {
+        flex: 1 1 calc(50% - 20px);
+    }
+    .section:nth-child(3) {
+        flex-basis: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .section {
+        flex-basis: 100%;
+    }
 }
